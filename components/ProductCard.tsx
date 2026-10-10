@@ -1,0 +1,3 @@
+"use client";
+import Link from "next/link"; import {Product,money,percent} from "@/lib/products";
+export default function ProductCard({product}:{product:Product}){const p=product;return <Link href={`/product/${p.slug}`} className="product-card"><div className="product-art"><span>{p.emoji}</span><small>{p.categoryName}</small></div><div className="product-content"><h3>{p.name}</h3><p className="unit">{p.unit}</p><div className="price-row"><div><small>আজকের দাম</small><strong>{money(p.price)} <em>টাকা</em></strong></div><span className={`change ${p.change>0?"positive":p.change<0?"negative":"neutral"}`}>{percent(p.change)}</span></div></div></Link>}

@@ -1,0 +1,1 @@
+import Link from "next/link";export default function NotFound(){return <div className="container empty-state not-found"><span>🧺</span><strong className="error-code">৪০৪</strong><h1>পাতাটি খুঁজে পাওয়া যায়নি</h1><p>আপনি যে পৃষ্ঠাটি খুঁজছেন সেটি সরানো হয়েছে অথবা ঠিকানাটি ভুল।</p><Link href="/" className="btn btn-primary">হোম পেজে ফিরে যান</Link></div>}

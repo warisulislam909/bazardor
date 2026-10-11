@@ -60,8 +60,15 @@ For production, add the same paths using your Vercel domain and set `BETTER_AUTH
 
 ```
 src/
-  app/            routes (home, category, product, signin, signup, profile, api/auth)
-  components/     Navbar, Ticker, Hero, ProductCard, SortSelect, skeletons…
-  hooks/          useProducts, useRequireAuth
-  lib/            auth (server + client), api, Bengali number helpers
+  app/                 routes (home, category, product, signin, signup, profile, api/auth)
+  components/
+    ui/                Section, EmptyState, ErrorAlert, FormField, SubmitButton, Avatar
+    navbar/            Logo, CategoryNav, AuthButtons, UserMenu
+    auth/              AuthCard, SignInForm, SignUpForm
+    product/           ProductSummary, PriceStats, StatCard, PriceTrend, MarketPrices, DivisionTable
+    category/          CategoryHeader
+    profile/           ProfileCard, UpdateProfileForm
+    (root)             Navbar, Ticker, TickerItem, Hero, ProductCard, ProductGrid, SortSelect, Skeletons, Footer…
+  hooks/               useProducts, useRequireAuth
+  lib/                 auth (server + client), api, Bengali number helpers, redirect helper
 ```

@@ -2,14 +2,15 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
+import { getRedirect } from "@/lib/redirect";
 
-export default function SocialButtons({ callbackURL = "/" }: { callbackURL?: string }) {
+export default function SocialButtons() {
   const [busy, setBusy] = useState<"google" | "github" | null>(null);
 
   const go = async (provider: "google" | "github") => {
     setBusy(provider);
     try {
-      const { error } = await authClient.signIn.social({ provider, callbackURL });
+      const { error } = await authClient.signIn.social({ provider, callbackURL: getRedirect() });
       if (error) {
         toast.error(error.message || "সোশ্যাল লগইন ব্যর্থ হয়েছে");
         setBusy(null);

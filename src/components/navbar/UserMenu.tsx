@@ -16,7 +16,9 @@ export default function UserMenu({ user }: { user: { name?: string | null; image
           router.push("/");
           router.refresh();
         },
-        onError: () => toast.error("সাইন আউট করা যায়নি, আবার চেষ্টা করুন"),
+       onError: () => {
+  toast.error("সাইন আউট করা যায়নি, আবার চেষ্টা করুন");
+},
       },
     });
   };
